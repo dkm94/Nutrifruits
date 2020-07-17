@@ -1,3 +1,5 @@
 API Walmart
 
 Fiche produit: nom, photo, prix, description, disponibilité
+
+Trouver des inspirations de designs: boutons, menus, cards...
