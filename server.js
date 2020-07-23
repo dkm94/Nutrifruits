@@ -76,6 +76,4 @@ io.on("connect", (socket) => {
   });
 });
 
-var server = app.listen(3010, () => {
-  console.log("server is running on port", server.address().port);
-});
+app.listen(process.env.PORT || 3010, () => console.log(`Server has started.`));
