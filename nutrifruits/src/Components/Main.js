@@ -1,6 +1,21 @@
 import React, { Component } from "react";
+import Fruits from "./Cards";
 
 class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fruits: [],
+    };
+  }
+  componentDidMount() {
+    fetch("../data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ fruits: data });
+      })
+      .catch(console.log);
+  }
   render() {
     return (
       <div className="all">
@@ -10,72 +25,8 @@ class Main extends Component {
             Notre site fournit des données sur la valeure nutritionnelle des
             fruits !
           </div>
-          <div class="card-grid">
-            <div className="card">
-              <div className="container">
-                <div className="top"></div>
-                <div className="bottom">
-                  <div className="details">
-                    <h1>Banane</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="inside">
-                <div className="icon">
-                  <i className="fas fa-info-circle"></i>
-                </div>
-                <div className="contents">Protéines gras sucre</div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="container">
-                <div className="top"></div>
-                <div className="bottom">
-                  <div className="details">
-                    <h1>Banane</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="inside">
-                <div className="icon">
-                  <i className="fas fa-info-circle"></i>
-                </div>
-                <div className="contents">Protéines gras sucre</div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="container">
-                <div className="top"></div>
-                <div className="bottom">
-                  <div className="details">
-                    <h1>Banane</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="inside">
-                <div className="icon">
-                  <i className="fas fa-info-circle"></i>
-                </div>
-                <div className="contents">Protéines gras sucre</div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="container">
-                <div className="top"></div>
-                <div className="bottom">
-                  <div className="details">
-                    <h1>Banane</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="inside">
-                <div className="icon">
-                  <i className="fas fa-info-circle"></i>
-                </div>
-                <div className="contents">Protéines gras sucre</div>
-              </div>
-            </div>
-          </div>
+          <h1 className="list">FRUITS LIST</h1>
+          <Fruits fruits={this.state.fruits} />
         </section>
       </div>
     );

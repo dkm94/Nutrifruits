@@ -11,16 +11,20 @@ body {
 
 .sidebar {
   width: 20%;
-  height: 100vh;
-  border: 2px solid red;
+  border: 2px solid lightgrey;
 }
 
 .main {
   width: 80%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   margin-left: 2em;
+}
+.main .list {
+  text-align: center;
+  font-size: 3rem;
+  color: orange;
+  text-decoration: underline;
 }
 .explanation {
   display: flex;
@@ -41,20 +45,29 @@ body {
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
   width: 100%;
-  height: 100%;
+  height: 200em;
   margin-top: 3em;
 }
 
 @media (min-width: 540px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+    height: 118em;
   }
 }
 
 @media (min-width: 960px) {
   .card-grid {
     grid-template-columns: repeat(4, 1fr);
-    height: 45%;
+    height: 118em;
+  }
+}
+@media (max-width: 380px) {
+  .sidebar {
+    display: none;
+  }
+  .explanation {
+    text-align: center;
   }
 }
 
@@ -73,7 +86,7 @@ body {
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }
 .card-grid:hover > .card:not(:hover) {
-  filter: brightness(0.8) saturate(0) contrast(1.2) blur(20px);
+  filter: brightness(0.8) saturate(0) contrast(1) blur(5px);
 }
 .card .container {
   width: 100%;
@@ -82,12 +95,11 @@ body {
 .card .container .top {
   height: 80%;
   width: 100%;
-  background: url("./img/banane.jpg") no-repeat center center;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
 }
+.card .container .top img {
+  width: 100%;
+}
+
 .card .container .bottom {
   width: 100%;
   height: 20%;
@@ -150,11 +162,24 @@ body {
   transform: translateY(0);
 }
 .card .inside .contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 18em;
   padding: 5%;
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.5);
   transform: translateY(-200%);
   transition: opacity 0.2s, transform 0.8s;
+}
+/* .card .inside .contents p {
+  color: orange;
+} */
+.card .inside .contents p span {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .fa,
