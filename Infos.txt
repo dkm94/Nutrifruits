@@ -1,3 +1,0 @@
-API Walmart
-
-Fiche produit: nom, photo, prix, description, disponibilité
