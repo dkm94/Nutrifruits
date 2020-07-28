@@ -4,22 +4,20 @@ body {
   width: 100%;
   font-family: "Salsa", cursive;
 }
-
-.all {
+.App {
   display: flex;
 }
 
-.sidebar {
-  width: 20%;
-  border: 2px solid lightgrey;
+.all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .main {
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 2em;
 }
+
 .main .list {
   text-align: center;
   font-size: 3rem;
@@ -40,16 +38,15 @@ body {
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-column-gap: var(--spacing-l);
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
   width: 100%;
-  height: 200em;
   margin-top: 3em;
 }
 
-@media (min-width: 540px) {
+/* @media (min-width: 540px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
     height: 118em;
@@ -61,17 +58,15 @@ body {
     grid-template-columns: repeat(4, 1fr);
     height: 118em;
   }
-}
+} */
 @media (max-width: 380px) {
-  .sidebar {
-    display: none;
-  }
   .explanation {
     text-align: center;
   }
 }
 
 .card {
+  height: 27em;
   background: white;
   position: relative;
   overflow: hidden;
@@ -95,6 +90,9 @@ body {
 .card .container .top {
   height: 80%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card .container .top img {
   width: 100%;
@@ -186,4 +184,170 @@ body {
 .fas {
   font-weight: 900;
   font-size: 2.5rem;
+}
+
+/* SIDEBAR/////////////////////////////////////// */
+
+.aside {
+  width: 25%;
+  /* height: 100vh; */
+  border-right: 0.1rem solid darkgray;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.aside-logo {
+  display: flex;
+}
+
+.aside-logo img {
+  width: 100%;
+  object-fit: scale-down;
+}
+
+.aside-filter {
+  height: 4em;
+  margin-top: 2em;
+  /* background-color: lightskyblue; */
+  border-top: 0.05rem solid;
+  border-bottom: 0.05rem solid;
+  display: flex;
+  align-items: center;
+}
+
+.aside-filter img {
+  margin: 10px;
+  height: 2em;
+}
+.aside-filter span {
+  font-size: 1.5rem;
+}
+
+/* Checkbox filters */
+
+.searchContainer {
+  background-color: lightblue;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+}
+
+.searchContainer form {
+  width: 100%;
+}
+
+.searchContainer h1 {
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  height: 30px;
+  margin-left: 20px;
+}
+
+label {
+  padding-left: 20px;
+}
+
+/* TEST */
+
+/*Checkboxes styles*/
+/* input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #397e19;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.12s, border-color 0.08s;
+  transition: all 0.12s, border-color 0.08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+} */
+
+input {
+  position: absolute;
+  display: none;
+}
+
+label {
+  width: 30%;
+  display: block;
+  position: relative;
+  padding: 15px 30px 10px 62px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  color: #fff;
+  background-color: lightgrey;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 30px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: background-color 0.2s;
+}
+
+label:first-of-type {
+  transform: translateX(-40px);
+}
+
+label:last-of-type {
+  transform: translateX(40px);
+}
+
+label:hover,
+input:focus + label {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+input:checked + label {
+  background-color: #397e19;
+}
+
+input:checked + label::before {
+  background-color: #fff;
 }

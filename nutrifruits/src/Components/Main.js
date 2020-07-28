@@ -19,7 +19,6 @@ class Main extends Component {
   render() {
     return (
       <div className="all">
-        <section className="sidebar">SIDEBAR</section>
         <section className="main">
           <div className="explanation">
             Notre site fournit des données sur la valeure nutritionnelle des
