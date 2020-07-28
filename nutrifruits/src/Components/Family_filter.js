@@ -9,77 +9,77 @@ class Search extends React.Component {
         {
           id: 11,
           name: "Rosaceae",
-          value: "Rosaceae"
+          value: "Rosaceae",
         },
         {
           id: 12,
           name: "Musaceae",
-          value: "Musaceae"
+          value: "Musaceae",
         },
         {
           id: 13,
           name: "Rutaceae",
-          value: "Rutaceae"
+          value: "Rutaceae",
         },
         {
-            id: 14,
-            name: "Anacardiaceae",
-            value: "Anacardiaceae"
+          id: 14,
+          name: "Anacardiaceae",
+          value: "Anacardiaceae",
         },
         {
-            id: 14,
-            name: "Bromeliaceae",
-            value: "Bromeliaceae"
+          id: 15,
+          name: "Bromeliaceae",
+          value: "Bromeliaceae",
         },
         {
-            id: 14,
-            name: "Solanaceae",
-            value: "Solanaceae"
+          id: 16,
+          name: "Solanaceae",
+          value: "Solanaceae",
         },
         {
-            id: 14,
-            name: "Cucurbitaceae",
-            value: "Cucurbitaceae"
-        }
+          id: 17,
+          name: "Cucurbitaceae",
+          value: "Cucurbitaceae",
+        },
       ],
       fruits: [
         {
           id: 1,
           family: "Rosaceae",
           name: "Apple",
-        //   location: "bangalore",
-        //   experience: 1
+          //   location: "bangalore",
+          //   experience: 1
         },
         {
           id: 2,
           family: "Musaceae",
           name: "Banana",
-        //   location: "mumbai",
-        //   experience: 3
+          //   location: "mumbai",
+          //   experience: 3
         },
         {
           id: 3,
           family: "Rutaceae",
           name: "Lemon",
-        //   location: "agra",
-        //   experience: 5
+          //   location: "agra",
+          //   experience: 5
         },
         {
           id: 4,
           family: "Anacardiaceae",
           name: "Mango",
-        //   location: "chennai",
-        //   experience: 6
+          //   location: "chennai",
+          //   experience: 6
         },
         {
           id: 5,
           family: "Bromeliaceae",
           name: "Pineapple",
-        //   location: "vegas",
-        //   experience: 7
-        }
+          //   location: "vegas",
+          //   experience: 7
+        },
       ],
-      activeFilter: []
+      activeFilter: [],
     };
   }
 
@@ -89,7 +89,7 @@ class Search extends React.Component {
       if (activeFilter.length === filters.length) {
         this.setState({ activeFilter: [] });
       } else {
-        this.setState({ activeFilter: filters.map(filter => filter.value) });
+        this.setState({ activeFilter: filters.map((filter) => filter.value) });
       }
     } else {
       if (activeFilter.includes(filter)) {
@@ -106,29 +106,27 @@ class Search extends React.Component {
   render() {
     const { filters, activeFilter } = this.state;
     let filteredList;
-    if (
-      activeFilter.length === 0 ||
-      activeFilter.length === filters.length
-    ) {
+    if (activeFilter.length === 0 || activeFilter.length === filters.length) {
       filteredList = this.state.fruits;
     } else {
-      filteredList = this.state.fruits.filter(item =>
+      filteredList = this.state.fruits.filter((item) =>
         this.state.activeFilter.includes(item.family)
       );
     }
     return (
       <div className="searchContainer">
         <form>
-        <h1>Famille</h1>
+          <h1>Famille</h1>
           <input
-            id="myInput"
+            id="toggle1"
             type="checkbox"
             onClick={() => this.onFilterChange("ALL")}
             checked={activeFilter.length === filters.length}
           />
-            <label htmlFor="myInput">All</label>
-            <br />
-          {this.state.filters.map(filter => (
+          <label htmlFor="toggle1">All</label>
+          <br />
+
+          {this.state.filters.map((filter) => (
             <React.Fragment>
               <input
                 id={filter.id}
@@ -142,7 +140,7 @@ class Search extends React.Component {
           ))}
         </form>
         <ul>
-          {filteredList.map(item => (
+          {filteredList.map((item) => (
             <div key={item.id}>
               <li>
                 {item.name} -- {item.family}
