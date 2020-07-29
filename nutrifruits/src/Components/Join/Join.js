@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Join.css";
 
 const Join = () => {
@@ -9,8 +9,7 @@ const Join = () => {
     <div className="joinOuterContainer">
       <div className="JoinInnerContainer">
         <h1 className="heading"> Join </h1>
-        <div>
-          {" "}
+        <div className="testdiv">
           <input
             placeholder="Name"
             className="joinInput"
@@ -24,7 +23,6 @@ const Join = () => {
           to={`/chat?name=${name}&room=${room}`}
         >
           <button className="button mt-20" type="submit">
-            {" "}
             Sign In
           </button>
         </Link>
@@ -33,4 +31,4 @@ const Join = () => {
   );
 };
 
-export default Join;
+export default withRouter(Join);

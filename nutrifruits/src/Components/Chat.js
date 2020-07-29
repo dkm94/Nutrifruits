@@ -78,10 +78,12 @@ import TextContainer from "./TextContainer/TextContainer";
 import Messages from "./Messages/Messages";
 
 import Input from "./Input/Input";
+import { withRouter } from "react-router-dom";
 
 let socket;
 
 const Chat = ({ location }) => {
+  console.log("location test:", location);
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
@@ -166,4 +168,4 @@ const Chat = ({ location }) => {
   );
 };
 
-export default Chat;
+export default withRouter(Chat);
