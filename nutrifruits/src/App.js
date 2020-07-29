@@ -9,16 +9,21 @@ import Chat from "./Components/Chat";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Route exact path="/" component={Aside} />
-      <Route exact path="/" component={Main} />
-      {/* <Route exact path="/" component={Demo} /> */}
+    <div className="App">
+      <Aside />
+      <Main />
 
-      {/* <Switch>
+      {/* <BrowserRouter>
+  <Route exact path="/" component={Aside} />
+ <Route exact path="/" component={Main} />
+       <Route exact path="/" component={Demo} /> 
+
+       <Switch>
         <Route exact path="/" component={Join} />
         <Route exact path="/" component={Chat} />
-      </Switch> */}
-    </BrowserRouter>
+      </Switch> 
+    </BrowserRouter> */}
+    </div>
   );
 }
 

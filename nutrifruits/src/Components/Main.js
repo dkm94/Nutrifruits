@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Fruits from "./Cards";
-import { withRouter } from "react-router-dom";
 
 class Main extends Component {
   constructor() {
@@ -33,4 +32,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(Main);
+export default Main;

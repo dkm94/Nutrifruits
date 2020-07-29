@@ -115,19 +115,22 @@ class Search extends React.Component {
     }
     return (
       <div className="searchContainer">
+        <h1>By Family:</h1>
+
         <form>
-          <h1>Famille</h1>
           <input
             id="toggle1"
             type="checkbox"
             onClick={() => this.onFilterChange("ALL")}
             checked={activeFilter.length === filters.length}
           />
-          <label htmlFor="toggle1">All</label>
+          <label className="labelText" htmlFor="toggle1">
+            All
+          </label>
           <br />
 
           {this.state.filters.map((filter) => (
-            <React.Fragment>
+            <React.Fragment key={filter.id}>
               <input
                 id={filter.id}
                 type="checkbox"
@@ -148,8 +151,6 @@ class Search extends React.Component {
             </div>
           ))}
         </ul>
-        {/* <input type="range" min="1" max="1000" id="slidebar"/>
-<p id="the_value"></p> */}
       </div>
     );
   }
