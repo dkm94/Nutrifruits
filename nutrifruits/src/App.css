@@ -303,7 +303,7 @@ input {
 }
 
 label {
-  width: 30%;
+  width: 46%;
   display: block;
   position: relative;
   padding: 15px 30px 10px 62px;
@@ -331,13 +331,13 @@ label::before {
   transition: background-color 0.2s;
 }
 
-label:first-of-type {
+/* label:first-of-type {
   transform: translateX(-40px);
-}
+} */
 
-label:last-of-type {
+/* label:last-of-type {
   transform: translateX(40px);
-}
+} */
 
 label:hover,
 input:focus + label {
