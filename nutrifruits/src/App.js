@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Main from "./Components/Main";
-import Demo from "./Components/Chat";
 import Aside from "./Components/Aside";
 import Join from "./Components/Join/Join";
 import Chat from "./Components/Chat";
