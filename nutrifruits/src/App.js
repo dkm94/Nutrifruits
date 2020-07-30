@@ -11,17 +11,14 @@ function App() {
     <div className="App">
       <Aside />
       <Main />
+      <Chat />
 
       {/* <BrowserRouter>
-  <Route exact path="/" component={Aside} />
- <Route exact path="/" component={Main} />
-       <Route exact path="/" component={Demo} /> 
-
-       <Switch>
-        <Route exact path="/" component={Join} />
-        <Route exact path="/" component={Chat} />
-      </Switch> 
-    </BrowserRouter> */}
+        <Switch>
+          <Route exact path="/" component={Join} /> 
+          <Route exact path="/" component={Chat} />
+        </Switch>
+      </BrowserRouter> */}
     </div>
   );
 }
