@@ -36,6 +36,19 @@ body {
   --spacing-l: 2em;
   --width-container: 85em;
 }
+
+/* Filter area */
+.searchbar {
+  height: 100px;
+  width: fit-content;
+  background-color: maroon;
+}
+
+.searchbar input {
+  display: flex;
+}
+
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

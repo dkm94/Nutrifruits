@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cards = ({ fruits }) => {
+const Cards = ({ fruits, value }) => {
   console.log(fruits)
 
     return (
@@ -8,7 +8,11 @@ const Cards = ({ fruits }) => {
         
         <h1 className="list">FRUITS LIST</h1>
     
-        {fruits.map((fruit) => (
+        {fruits
+        .filter(fruit => {
+          return fruit.name.toLowerCase().indexOf(value.toLowerCase()) >= 0
+        })
+        .map((fruit) => (
           <div className="card" key={fruit.id}>
             <div className="container">
               <div className="top">

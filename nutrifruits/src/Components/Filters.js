@@ -7,7 +7,8 @@ class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fruits: []
+      fruits: [],
+      value: ""
     };
     
   }
@@ -55,7 +56,11 @@ class Filters extends React.Component {
     });
     this.setState({fruits})
     console.log("clicked !")
-  }  
+  }
+
+  inputValue = (e) => {
+    this.setState({value: e.target.value});
+  }
 
   render() {
   
@@ -135,7 +140,14 @@ class Filters extends React.Component {
 
       </form>
       </section>
-      <Cards fruits={this.state.fruits}/>
+
+      <section className="searchbar">
+      <form>
+          <input type="text" name="searchbar" value={this.state.value} placeholder="Recherche..." onChange={this.inputValue}/>
+      </form>
+      </section>
+
+      <Cards fruits={this.state.fruits} value={this.state.value}/>
     </div>
   )}
 }
