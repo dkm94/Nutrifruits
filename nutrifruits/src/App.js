@@ -7,18 +7,21 @@ import Join from "./Components/Join/Join";
 import Chat from "./Components/Chat";
 
 function App() {
+  
+
   return (
     <div className="App">
-      <Aside />
+      {/* <Aside />
       <Main />
-      <Chat />
+      <Chat /> */}
 
-      {/* <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Join} /> 
-          <Route exact path="/" component={Chat} />
-        </Switch>
-      </BrowserRouter> */}
+      <BrowserRouter>
+        <Route path="/" component={Aside} /> 
+        <Route path="/" component={Main} /> 
+        {/* <Route exact path="/" component={Join} />  */}
+        <Route exact path="/chat" component={Chat} />
+
+      </BrowserRouter>
     </div>
   );
 }

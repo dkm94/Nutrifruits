@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Fruits from "./Cards";
+import Join from './Join/Join'
 
 class Main extends Component {
   constructor() {
     super();
     this.state = {
       fruits: [],
+      visible:false
     };
   }
   componentDidMount() {
@@ -16,7 +18,20 @@ class Main extends Component {
       })
       .catch(console.log);
   }
+
+
+  displayChat = () => {
+    this.setState({
+      visible : !this.state.visible
+    })
+
+  }
+ 
+
+  
   render() {
+
+
     return (
       <div className="all">
         <section className="main">
@@ -26,7 +41,12 @@ class Main extends Component {
           </div>
           <h1 className="list">FRUITS LIST</h1>
           <Fruits fruits={this.state.fruits} />
-        </section>
+        </section>        
+        <div className="buttonChat">
+          <img onClick={this.displayChat} classname="imgChat" src={require('../img/banane.jpg')} />
+        </div>
+      {this.state.visible ? <Join /> : null }
+
       </div>
     );
   }
