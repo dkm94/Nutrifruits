@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Filter from "./Filter/Filter";
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 class Home extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class Home extends Component {
       <div className="home">
         <Header />
         <Filter />
+        <Footer />
       </div>
     );
   }
