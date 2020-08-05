@@ -18,8 +18,8 @@ function App() {
       <BrowserRouter>
         <Route path="/" component={Aside} /> 
         <Route path="/" component={Main} /> 
-        {/* <Route exact path="/" component={Join} />  */}
-        <Route exact path="/chat" component={Chat} />
+        {/* <Route path="/" component={Join} />  */}
+        {/* <Route exact path="/chat" component={Chat} /> */}
 
       </BrowserRouter>
     </div>

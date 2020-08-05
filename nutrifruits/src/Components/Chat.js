@@ -167,4 +167,4 @@ const Chat = ({ location }) => {
   );
 };
 
-export default Chat;
+export default withRouter(Chat);

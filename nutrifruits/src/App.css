@@ -59,6 +59,25 @@ body {
     height: 118em;
   }
 } */
+
+
+
+.boxChat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25em;
+  position: fixed;
+  right: 3.3em;
+  bottom: 3.3em;
+  width: 20em;
+}
+
+
+.hide{
+  display: none;
+}
+
 @media (max-width: 380px) {
   .explanation {
     text-align: center;
