@@ -7,9 +7,7 @@ import Home from "./Components/Home";
 
 function App() {
   return (
-    <>
-      {/* <Home /> */}
-
+    <div className="App">
       <BrowserRouter>
         <Route exact path="/" component={Home} />
 
@@ -18,7 +16,7 @@ function App() {
           <Route exact path="/" component={Chat} />
         </Switch> */}
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

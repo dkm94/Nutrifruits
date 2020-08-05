@@ -83,7 +83,6 @@ import { withRouter } from "react-router-dom";
 let socket;
 
 const Chat = ({ location }) => {
-  console.log("location test:", location);
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
@@ -151,7 +150,7 @@ const Chat = ({ location }) => {
           sendMessage={sendMessage}
         />
       </div>
-      <TextContainer users={users} />
+      {/* <TextContainer users={users} /> */}
     </div>
 
     // <div className='outerContainer'>
