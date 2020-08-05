@@ -1,26 +1,20 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Main from "./Components/Main";
-import Aside from "./Components/Aside";
 import Join from "./Components/Join/Join";
 import Chat from "./Components/Chat";
+import Home from "./Components/Home";
 
 function App() {
-  
-
   return (
     <div className="App">
-      {/* <Aside />
-      <Main />
-      <Chat /> */}
-
       <BrowserRouter>
-        <Route path="/" component={Aside} /> 
-        <Route path="/" component={Main} /> 
-        {/* <Route path="/" component={Join} />  */}
-        {/* <Route exact path="/chat" component={Chat} /> */}
+        <Route exact path="/" component={Home} />
 
+        {/* <Switch>
+          <Route exact path="/" component={Join} />
+          <Route exact path="/" component={Chat} />
+        </Switch> */}
       </BrowserRouter>
     </div>
   );
