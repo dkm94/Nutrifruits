@@ -1,6 +1,7 @@
-# e-commerce
+# Nutrifruits 
 
-Projet de site e-commerce.
+Application web d'informations nutritives sur les fruits du quotidien
++ chat en ligne
 
 Equipe front-end: Sarah, Diane
 Equipe back-end: Mandel, Pierre-Alain
